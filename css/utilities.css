@@ -1,0 +1,11 @@
+/* css/utilities.css */
+.w-full{width:100%}
+.text-center{text-align:center}
+.flex{display:flex} .items-center{align-items:center} .justify-between{justify-content:space-between}
+.mt-2{margin-top:8px} .mt-3{margin-top:12px} .mt-4{margin-top:16px}
+.mb-2{margin-bottom:8px} .mb-4{margin-bottom:16px}
+.p-2{padding:8px} .p-3{padding:12px} .p-4{padding:16px}
+
+/* grid sencillo 2 col */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+@media (max-width:768px){.grid-2{grid-template-columns:1fr}}

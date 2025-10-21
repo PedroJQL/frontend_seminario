@@ -1,0 +1,46 @@
+/* css/base.css */
+:root{
+  --bg:#f6f8fb; --panel:#fff; --brand:#0a8e32;
+  --primary:#0d6efd; --primary-700:#0b5ed7;
+  --success:#198754; --success-700:#157347;
+  --text:#1f2d3d; --muted:#6c7a89; --border:#e4e8ef;
+  --r-lg:18px; --r-md:12px; --shadow:0 8px 24px rgba(16,24,40,.08);
+  --focus:0 0 0 3px rgba(13,110,253,.25);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+
+.contenedor-app{
+  min-height:100dvh;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+}
+
+/* Header / Footer / Contenido comunes */
+.encabezado{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo-placeholder{
+  width:76px;height:56px;border:2px dashed #cfe3d6;background:#f4fbf6;border-radius:10px;
+}
+.brand h1{margin:0;color:var(--brand);font-size:1.15rem}
+.acciones{display:flex;gap:10px;flex-wrap:wrap}
+
+.contenido{max-width:1200px;margin:26px auto 40px;padding:0 20px}
+
+.pie-pagina{
+  background:#fff;border-top:1px solid var(--border);
+  text-align:center;padding:12px;color:#3a4856;
+}
