@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platillos</title>
+  <link rel="stylesheet" href="/css/estilos-platillos.css">
+</head>
+<body>
+  <div class="contenedor-app">
+
+    <!-- Header con logo y barra -->
+    <header class="encabezado">
+      <div class="brand">
+        <!-- Reemplaza por tu logo -->
+        <div class="logo-placeholder"></div>
+        <h1>Restaurante Chicooj</h1>
+      </div>
+
+      <nav class="acciones">
+        <a class="btn btn-outline" href="/main.html">Inicio</a>
+        <a class="btn btn-outline" href="/templates/usuarios.html">Usuarios</a>
+        <a class="btn btn-outline" href="#">Ayuda</a>
+        <a class="btn btn-primary" href="/templates/login.html">Cerrar Sesión</a>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <section class="formulario-card">
+        <div class="encabezado-form">
+          <h2>Ingrese Datos de Platillo</h2>
+          <a href="/templates/administracion/control-platillos.html" class="btn btn-outline btn-regresar">← Regresar</a>
+        </div>
+
+        <form class="formulario">
+          <div class="seccion_platillo">
+            <label>ID</label>
+            <input type="text" readonly>
+
+            <label>Nombre</label>
+            <input type="text" placeholder="Ejemplo: Pollo asado">
+
+            <label>Precio</label>
+            <input type="text" placeholder="Ejemplo: 25.00">
+
+            <label>Descripción</label>
+            <input type="text" placeholder="Breve descripción del platillo">
+          </div>
+
+          <div class="boton">
+            <button type="submit" class="btn btn-success">Agregar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>© Derechos Reservados</p>
+    </footer>
+  </div>
+</body>
+</html>

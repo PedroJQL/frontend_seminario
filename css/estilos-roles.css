@@ -1,0 +1,196 @@
+:root{
+  --bg:#f6f8fb; --panel:#fff; --brand:#0a8e32;
+  --primary:#0d6efd; --primary-700:#0b5ed7;
+  --success:#198754; --success-700:#157347;
+  --text:#1f2d3d; --muted:#6c7a89; --border:#e4e8ef;
+  --r-lg:18px; --r-md:12px; --shadow:0 8px 24px rgba(16,24,40,.08);
+  --focus:0 0 0 3px rgba(13,110,253,.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+.contenedor-app{
+  min-height:100dvh;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+}
+
+/* HEADER */
+.encabezado{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 16px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-placeholder{
+  width:76px;
+  height:56px;
+  border:2px dashed #cfe3d6;
+  background:#f4fbf6;
+  border-radius:10px;
+}
+.brand h1{
+  margin:0;
+  color:var(--brand);
+  font-size:1.15rem;
+}
+.acciones{
+  display:flex;
+  gap:10px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid transparent;
+  transition:.15s;
+}
+.btn-outline{
+  background:#fff;
+  color:#0a1f44;
+  border-color:#d8e3ef;
+}
+.btn-outline:hover{
+  background:#f1f5fa;
+}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+.btn-primary:hover{
+  background:var(--primary-700);
+}
+.btn-success{
+  background:var(--success);
+  color:#fff;
+}
+.btn-success:hover{
+  background:var(--success-700);
+}
+
+/* CONTENIDO */
+.contenido{
+  max-width:720px;
+  margin:26px auto 40px;
+  padding:0 20px;
+}
+.form-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  box-shadow:var(--shadow);
+  padding:24px;
+}
+.form-card h2{
+  text-align:center;
+  margin:6px 0 18px;
+  color:#0b2c1a;
+}
+
+/* FORMULARIO */
+.formulario{
+  display:grid;
+  gap:18px;
+}
+.seccion{
+  background:#fbfdff;
+  border:1px solid var(--border);
+  border-radius:var(--r-md);
+  padding:16px;
+  display:grid;
+  gap:14px;
+}
+.seccion legend{
+  font-weight:700;
+  color:#0b2c1a;
+  padding:0 6px;
+}
+label{
+  font-weight:600;
+  font-size:.95rem;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  font-size:16px;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+input:focus,textarea:focus{
+  border-color:var(--primary);
+  box-shadow:var(--focus);
+}
+input[readonly]{
+  background:#f8f9fa;
+  color:#7a8087;
+}
+
+/* BOTÓN */
+.boton{
+  display:flex;
+  justify-content:center;
+  margin-top:8px;
+}
+.boton .btn{
+  width:min(400px,100%);
+}
+
+/* FOOTER */
+.pie-pagina{
+  background:#fff;
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:12px;
+  color:#3a4856;
+}
+
+/* ====== Encabezado del formulario con botón regresar ====== */
+.encabezado-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* ====== Botón regresar ====== */
+.btn-regresar {
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #d8e3ef;
+  background: #fff;
+  color: #0a1f44;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-regresar:hover {
+  background: #f1f5fa;
+  border-color: #cbd5e1;
+}
+
+/* RESPONSIVE */
+@media (max-width:480px){
+  .contenido{padding:0 12px;}
+  .form-card{padding:16px;}
+}

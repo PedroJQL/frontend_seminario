@@ -1,0 +1,82 @@
+:root{
+  --bg:#f6f8fb; --panel:#fff; --brand:#0a8e32;
+  --primary:#0d6efd; --primary-700:#0b5ed7;
+  --text:#1f2d3d; --muted:#6c7a89; --border:#e4e8ef;
+  --radius-lg:18px; --shadow:0 8px 24px rgba(16,24,40,.08);
+  --focus:0 0 0 3px rgba(13,110,253,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+.contenedor-app{min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto}
+
+/* Header */
+.encabezado{
+  background:#fff;border-bottom:1px solid var(--border);box-shadow:var(--shadow);
+  display:flex;justify-content:space-between;align-items:center;padding:10px 20px;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-placeholder{width:84px;height:64px;border:2px dashed #cfe3d6;background:#f4fbf6;border-radius:10px}
+.brand-text h1{font-size:1.5rem;color:var(--brand)}
+.badge{display:inline-block;padding:3px 8px;border:1px solid #cfe3d6;border-radius:999px;font-size:.75rem;font-weight:700;color:var(--brand)}
+
+.acciones{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;transition:.15s}
+.btn-outline:hover{background:#f1f5fa}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-700)}
+
+/* Contenido */
+.contenido{max-width:1000px;margin:30px auto 40px;padding:0 20px}
+.titulo-seccion{text-align:center;font-size:1.6rem;color:#0b2c1a;margin-bottom:24px}
+
+/* Grid tarjetas (3 en desktop, 2 en tablet, 1 en móvil) */
+.grid-opciones{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:24px;
+  align-items:stretch;
+}
+@media (max-width: 1024px){
+  .grid-opciones{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .grid-opciones{ grid-template-columns: 1fr; }
+}
+
+.card-opcion{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:24px;
+  display:grid;
+  gap:14px;
+  text-align:center;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card-opcion:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 28px rgba(16,24,40,.15);
+}
+.card-opcion h3{
+  color:#0b2c1a;
+  font-size:1.2rem;
+}
+.card-opcion .desc{
+  color:var(--muted);
+  font-size:.95rem;
+}
+.card-opcion .btn{
+  width:fit-content;
+  margin:10px auto 0;
+}
+
+/* Footer */
+.pie-pagina{
+  background:#fff;
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:12px;
+  color:#3a4856;
+}

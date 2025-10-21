@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cocina</title>
+  <link rel="stylesheet" href="/css/estilos-cocina.css" />
+</head>
+<body>
+  <div class="contenedor-app">
+
+    <!-- Header -->
+    <header class="encabezado">
+      <div class="brand">
+        <div class="logo-placeholder"></div>
+        <h1>Restaurante Chicooj</h1>
+      </div>
+
+      <nav class="acciones">
+        <a class="btn btn-outline" href="/main.html">Inicio</a>
+        <a class="btn btn-primary" href="/templates/login.html">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <section class="tabla-container">
+
+        <!-- Barra superior con botones -->
+        <div class="tabla-header">
+          <a href="/templates/cocina/menu_cocina.html" class="btn btn-outline">← Regresar</a>
+          <h2>Órdenes</h2>
+          <button class="btn btn-success" id="alertar">Alertar mesero</button>
+        </div>
+
+        <!-- Tabla -->
+        <div class="tabla-orden" aria-live="polite">
+          <table>
+            <thead>
+              <tr>
+                <th>No. Orden</th>
+                <th>Cantidad</th>
+                <th>Platillo</th>
+                <th>Observaciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1024</td>
+                <td>2</td>
+                <td>Hamburguesa</td>
+                <td>Sin queso, con tomate</td>
+              </tr>
+              <tr>
+                <td>1025</td>
+                <td>1</td>
+                <td>Desayuno típico</td>
+                <td>Con jugo natural</td>
+              </tr>
+              <tr>
+                <td>1026</td>
+                <td>3</td>
+                <td>Caldo de gallina</td>
+                <td>Sin sal</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>© Derechos Reservados</p>
+    </footer>
+  </div>
+
+  <script>
+    // Acción ejemplo
+    document.getElementById("alertar").addEventListener("click", () => {
+      alert("El mesero ha sido alertado para recoger la orden.");
+    });
+  </script>
+</body>
+</html>

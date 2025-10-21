@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Listado de Tickets</title>
+  <link rel="stylesheet" href="/css/estilos-tour-control.css">
+</head>
+<body>
+  <div class="contenedor-app">
+    <header class="encabezado">
+      <div class="brand">
+        <div class="logo-placeholder"></div>
+        <h1>Restaurante Chicooj</h1>
+      </div>
+      <nav class="acciones">
+        <a class="btn btn-outline" href="/main.html">Inicio</a>
+        <a class="btn btn-primary" href="/templates/login.html">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <section class="tabla-container">
+        <h2>Tickets Registrados</h2>
+
+        <!-- Botón superior -->
+        <div class="tabla-actions">
+          <a class="btn btn-outline" href="/templates/tour/tour.html" id="btn-editar">Editar seleccionado</a>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros">
+          <div class="campo">
+            <label for="f-fecha">Fecha</label>
+            <input id="f-fecha" type="date">
+          </div>
+          <div class="campo">
+            <label for="f-servicio">Servicio</label>
+            <select id="f-servicio">
+              <option value="">Todos</option>
+              <option>Cannopy</option>
+              <option>Recorrido</option>
+              <option>Recorrido y Cannopy</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-tipo">Tipo visitante</label>
+            <select id="f-tipo">
+              <option value="">Todos</option>
+              <option>Nacional</option>
+              <option>Extranjero</option>
+              <option>Estudiante</option>
+            </select>
+          </div>
+          <button class="btn btn-outline" type="button">Aplicar</button>
+        </div>
+
+        <!-- Tabla -->
+        <div class="tabla-orden">
+          <table id="tabla-tickets">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Servicio</th>
+                <th>Precio Servicio</th>
+                <th>Tipo visitante</th>
+                <th>Cantidad visitante</th>
+                <th>Idioma</th>
+                <th>Observaciones</th>
+                <th>Precio total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-id="1">
+                <td>1</td><td>2025-10-15</td><td>Cannopy</td><td>Q50.00</td><td>Nacional</td><td>4</td><td>Inglés</td><td>Playera roja</td><td>Q200.00</td>
+              </tr>
+              <tr data-id="2">
+                <td>2</td><td>2025-10-15</td><td>Recorrido</td><td>Q20.00</td><td>Extranjero</td><td>5</td><td>Español</td><td>1 visitante</td><td>Q120.00</td>
+              </tr>
+              <tr data-id="3">
+                <td>3</td><td>2025-10-16</td><td>Recorrido y Cannopy</td><td>Q30.00</td><td>Estudiante</td><td>5</td><td>Q’eqchi’</td><td>Edad entre 12–14 años</td><td>Q150.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>© Derechos Reservados</p>
+    </footer>
+  </div>
+
+  <!-- Script para selección y redirección -->
+  <script>
+    const tabla = document.getElementById('tabla-tickets');
+    const btnEditar = document.getElementById('btn-editar');
+    let filaSeleccionada = null;
+
+    tabla.addEventListener('click', e => {
+      const fila = e.target.closest('tr');
+      if (!fila) return;
+
+      // quitar selección previa
+      tabla.querySelectorAll('tbody tr').forEach(tr => tr.classList.remove('seleccionada'));
+      fila.classList.add('seleccionada');
+      filaSeleccionada = fila.dataset.id;
+    });
+
+    btnEditar.addEventListener('click', e => {
+      if (filaSeleccionada) {
+        window.location.href = `/templates/tour.html?id=${filaSeleccionada}`;
+      } else {
+        alert('Por favor selecciona un ticket antes de editar.');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

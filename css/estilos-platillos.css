@@ -1,0 +1,195 @@
+:root{
+  --bg:#f6f8fb;
+  --panel:#ffffff;
+  --brand:#0a8e32;
+  --primary:#0d6efd;
+  --primary-700:#0b5ed7;
+  --success:#198754;
+  --success-700:#157347;
+  --text:#1f2d3d;
+  --muted:#6c7a89;
+  --border:#e4e8ef;
+  --radius-lg:18px;
+  --radius-md:10px;
+  --shadow:0 6px 20px rgba(0,0,0,.08);
+  --focus:0 0 0 3px rgba(13,110,253,.25);
+}
+
+/* ====== Reset y estructura base ====== */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.contenedor-app{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  min-height:100vh;
+}
+
+/* ====== Encabezado ====== */
+.encabezado{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo-placeholder{
+  width:80px;height:60px;
+  background:#f1f8f2;
+  border:2px dashed #b9dbbb;
+  border-radius:8px;
+}
+.brand h1{
+  font-size:1.4rem;
+  color:var(--brand);
+  font-weight:700;
+}
+
+/* ====== Barra de navegación ====== */
+.acciones{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.2s;
+  cursor:pointer;
+  border:1px solid transparent;
+}
+.btn-outline{
+  background:#fff;
+  color:#0a1f44;
+  border-color:#d9e2ee;
+}
+.btn-outline:hover{background:#f3f6f9}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+.btn-primary:hover{background:var(--primary-700)}
+.btn-success{
+  background:var(--success);
+  color:#fff;
+}
+.btn-success:hover{background:var(--success-700)}
+
+/* ====== Contenido principal ====== */
+.contenido{
+  max-width:1000px;
+  margin:40px auto;
+  padding:20px;
+}
+.formulario-card{
+  background:var(--panel);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:30px;
+  border:1px solid var(--border);
+}
+.formulario-card h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#0b2c1a;
+}
+
+/* ====== Formulario ====== */
+.formulario{
+  display:grid;
+  gap:24px;
+}
+.seccion_platillo{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px 20px;
+}
+.seccion_platillo label{
+  font-weight:600;
+  color:var(--text);
+  align-self:end;
+}
+.seccion_platillo input{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  font-size:15px;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+.seccion_platillo input:focus{
+  border-color:var(--primary);
+  box-shadow:var(--focus);
+}
+.seccion_platillo input[readonly]{
+  background:#f8f9fa;
+  color:#8a8a8a;
+}
+
+/* ====== Botón ====== */
+.boton{
+  display:flex;
+  justify-content:center;
+}
+button.btn{
+  width:60%;
+  font-size:1rem;
+}
+
+/* ====== Footer ====== */
+.pie-pagina{
+  background:#fff;
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:12px 0;
+  color:#3a4856;
+  font-size:.9rem;
+}
+
+/* ====== Encabezado del formulario con botón regresar ====== */
+.encabezado-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.btn-regresar {
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #0a1f44;
+  border: 1px solid #d9e2ee;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.btn-regresar:hover {
+  background: #f1f5fa;
+  border-color: #cbd5e1;
+}
+
+
+/* ====== Responsividad ====== */
+@media (max-width:768px){
+  .seccion_platillo{grid-template-columns:1fr}
+  button.btn{width:100%}
+}

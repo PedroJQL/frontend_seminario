@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comandas (visor)</title>
+  <link rel="stylesheet" href="/css/estilos-comanda-control.css">
+</head>
+<body>
+  <div class="contenedor-app">
+    <!-- Header -->
+    <header class="encabezado">
+      <div class="brand">
+        <div class="logo-placeholder" aria-label="Logo"></div>
+        <h1>Restaurante Chicooj</h1>
+      </div>
+      <nav class="acciones" aria-label="Acciones">
+        <a class="btn btn-outline" href="/main.html">Inicio</a>
+        <a class="btn btn-primary" href="/templates/login.html">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <!-- Contenido -->
+    <main class="contenido" role="main">
+      <section class="visor">
+        <div class="visor-header">
+          <button type="button" class="flecha" id="prev" aria-label="Anterior">‹</button>
+
+          <div class="resumen">
+            <h2 class="titulo">Comandas por orden</h2>
+            <div class="meta">
+              <span id="orden-id">No. Orden: <strong>1031</strong></span>
+              <span id="orden-fecha">Fecha: <strong>2025-10-15</strong></span>
+              <span id="orden-total" class="total">Total: <strong>Q 180.00</strong></span>
+            </div>
+            <div class="indice">
+              <span id="pos">1</span> de <span id="tot">3</span>
+            </div>
+          </div>
+
+          <button type="button" class="flecha" id="next" aria-label="Siguiente">›</button>
+        </div>
+
+       
+        <div class="visor-acciones">
+          <a href="/templates/mesero/mesero_comanda.html" class="btn btn-outline">Editar orden completa</a>
+        </div>
+
+        <div class="visor-cuerpo">
+          <div class="tabla-orden">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cant.</th>
+                  <th>Platillo</th>
+                  <th>Observaciones</th>
+                  <th>Precio</th>
+                  <th>Observación Extra</th>
+                  <th>Precio Extra</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>Hamburguesa</td>
+                  <td>Sin queso, con tomate</td>
+                  <td>Q 45.00</td>
+                  <td>2 Salchichas</td>
+                  <td>Q 5.00</td>
+                  <td>Q 90.00</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Desayuno típico</td>
+                  <td>Con jugo</td>
+                  <td>Q 35.00</td>
+                  <td>—</td>
+                  <td>Q 0.00</td>
+                  <td>Q 35.00</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Caldo de gallina</td>
+                  <td>—</td>
+                  <td>Q 55.00</td>
+                  <td>Chile</td>
+                  <td>Q 3.00</td>
+                  <td>Q 55.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>© Derechos Reservados</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuevo Ticket</title>
+  <link rel="stylesheet" href="/css/estilos-tour.css">
+</head>
+<body>
+  <div class="contenedor-app">
+    <header class="encabezado">
+      <div class="brand">
+        <div class="logo-placeholder" aria-label="Logo"></div>
+        <h1>Restaurante Chicooj</h1>
+      </div>
+      <nav class="acciones" aria-label="Acciones">
+        <a class="btn btn-primary" href="/templates/login.html">Cerrar sesión</a>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <section class="form-card">
+        <h2>Crear Ticket</h2>
+        <form class="formulario" id="form-ticket" autocomplete="off" novalidate>
+          <fieldset class="seccion">
+            <legend>Datos del Ticket</legend>
+
+            <label for="id">No.</label>
+            <input id="Id" type="text" required>
+
+            <label for="fecha">Fecha</label>
+            <input id="fecha" type="date" required>
+
+            <label for="servicio">Servicio</label>
+            <input id="servicio" type="text" required>
+            <label for="servicio-precio">Precio de servicio</label>
+            <input id="servicio" type="text" required>
+
+            <label for="tipo">Tipo de visitante</label>
+            <select id="tipo" required>
+              <option value="">Seleccionar…</option>
+              <option value="Nacional">Nacional</option>
+              <option value="Extranjero">Extranjero</option>
+              <option value="Estudiante">Estudiante</option>
+            </select>
+             <label for="cantidad-visitante">Cantidad de visitantes</label>
+            <input id="cantidad-visitante" type="number" required>
+
+            <label for="idioma">Idioma</label>
+            <input id="idioma" type="text" required>
+
+            <label for="observaciones">Observaciones</label>
+            <input id="observaciones" type="text" required>
+
+            <label for="precio">Precio total</label>
+            <input id="precio" type="number"  placeholder="0.00" required>
+          </fieldset>
+
+          <div class="botones-acciones">
+            <button type="submit" class="btn btn-success">Guardar Ticket</button>
+            <!-- 🔹 Botón agregado para visualizar registros -->
+            <a href="/templates/tour/tour-control.html" class="btn btn-outline">Visualizar Tickets</a>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <p>© Derechos Reservados</p>
+    </footer>
+  </div>
+</body>
+</html>
